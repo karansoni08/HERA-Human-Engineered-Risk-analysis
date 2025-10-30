@@ -1,262 +1,223 @@
 # 🧠 HERA: Human Engineered Risk Analysis  
-### Software Development Plan (8 Phases)
+## Software Development Plan (Corporate Edition)
 
 ---
 
-## **Overview**
-HERA (Human Engineered Risk Analysis) is an **LLM-assisted human-centric threat modeling system** designed to detect and quantify social engineering and insider risks.  
-The project follows an **8-phase structured software development lifecycle**, integrating both deterministic analytics and AI reasoning using the **OME² Framework (Origin • Method • Exposure • Outcome)**.
+### 1. Introduction
+
+#### 1.1 Purpose  
+This Software Development Plan (SDP) defines the scope, objectives, processes, resources, quality assurance, and risk management strategies for the development of **HERA (Human Engineered Risk Analysis)** — a next-generation, LLM-assisted human-centric threat modeling system that quantifies social engineering and insider risks using the **OME² Framework (Origin • Method • Exposure • Outcome)**.
+
+#### 1.2 Scope  
+HERA automates the identification and analysis of human-driven security threats by integrating:
+- Deterministic behavioral analytics and risk scoring  
+- LLM-driven policy reasoning, narrative generation, and mitigation guidance  
+- A structured framework for Origin, Method, Exposure, and Outcome mapping  
+- Executive-level reporting and visualization capabilities  
+
+The system will be developed as an **enterprise-grade research prototype** suitable for internal security teams, consultancy use, or integration within SOC environments.
+
+#### 1.3 Definitions, Acronyms, and Abbreviations  
+| Term | Definition |
+|------|-------------|
+| HTI | Human Threat Index |
+| OME² | Origin • Method • Exposure • Outcome Framework |
+| LLM | Large Language Model |
+| SOC | Security Operations Center |
+| QA | Quality Assurance |
 
 ---
 
-## 🗂️ **Phase 1 — Planning & Requirement Analysis**
-
-### 🎯 Objective
-Define the overall vision, scope, and purpose of HERA, and establish project goals, deliverables, and success metrics.
-
-### 🧩 Key Tasks
-- Define the purpose: Quantify human-driven cyber risks using behavioral and policy data.  
-- Identify stakeholders: Cybersecurity analysts, compliance officers, researchers.  
-- Document functional and non-functional requirements.  
-- Determine tech stack: Python, Pandas, JSON, LLM (Ollama/Mistral), Matplotlib, ReportLab.  
-- Establish evaluation metrics (HTI accuracy, LLM JSON validity, reporting quality).
-
-### 📦 Deliverables
-- Project Charter  
-- Requirement Specification Document  
-- Data Schema Design (CSV structures)  
-- Defined OME² framework model
-
-### 🛠️ Tools
-Miro / Lucidchart (brainstorming), Markdown / Docs for documentation.
-
-### ✅ Outcome
-A clear, actionable project blueprint defining the “what,” “why,” and “how” of HERA.
+### 2. References
+- IEEE 1058: Standard for Software Project Management Plans  
+- NIST SP 800-53: Security and Privacy Controls for Information Systems  
+- ISO 27001 Annex A: Information Security Controls  
+- MITRE PRE-ATT&CK Framework  
+- Internal Design Documents: `ARCHITECTURE.md`, `RISK_MODEL_SPEC.md`
 
 ---
 
-## **Phase 2 — System Design & Architecture**
+### 3. Project Overview
 
-### 🎯 Objective
-Develop the technical architecture, module hierarchy, and data flow for HERA.
+#### 3.1 Objectives
+- Quantify and model human-centric threats within organizational contexts.  
+- Automate policy extraction, threat scenario simulation, and mitigation generation via LLMs.  
+- Deliver transparent, explainable analytics aligned with enterprise security frameworks.  
+- Ensure privacy, fairness, and reproducibility using synthetic data.
 
-### 🧩 Key Tasks
-- Design the overall system architecture (Data → Analytics → LLM → Visualization).  
-- Define module dependencies and interfaces.  
-- Create the OME² data model (Origin, Method, Exposure, Outcome).  
-- Establish project folder structure: `/data`, `/src`, `/outputs`, `/docs`.  
-- Specify JSON schemas for LLM outputs (policy_rules, scenarios, triage, guidance).
+#### 3.2 Deliverables
+- **Core Engine:** HTI computation and OME² mapping.  
+- **LLM Modules:** Policy extraction, scenario generator, analyst summarizer, mitigation coach.  
+- **Visualization Suite:** Heatmaps, risk dashboards, executive reporting.  
+- **Documentation:** Technical design, architecture, and user manuals.  
+- **Compliance Package:** Ethics and privacy assurance report.
 
-### 📦 Deliverables
-- `ARCHITECTURE.md` with diagrams  
-- OME² data and class models  
-- Defined JSON schemas and configuration templates
-
-### 🛠️ Tools
-Mermaid, Draw.io, Markdown, UML diagrams.
-
-### ✅ Outcome
-A scalable and modular blueprint ensuring system clarity and extensibility.
+#### 3.3 Constraints
+- No use of real or sensitive enterprise data (synthetic only).  
+- All LLM operations to run offline or within a controlled environment.  
+- Compliance with data-handling and AI ethics guidelines.
 
 ---
 
-## **Phase 3 — Data Layer Development**
+### 4. Organizational Structure
 
-### 🎯 Objective
-Build the synthetic data generation and ingestion pipeline for safe, realistic datasets.
+#### 4.1 Roles and Responsibilities
+| Role | Responsibility |
+|------|----------------|
+| **Project Lead / Architect** | Oversees design, ensures architectural integrity, manages deliverables. |
+| **Data Engineer** | Develops synthetic data generation and ingestion pipelines. |
+| **ML / LLM Engineer** | Implements AI reasoning modules and prompt governance. |
+| **Software Developer** | Implements analytics, visualization, and integration scripts. |
+| **QA Lead** | Conducts validation, testing, and ethics compliance audits. |
+| **Technical Writer** | Prepares documentation and reports. |
 
-### 🧩 Key Tasks
-- Implement `generate_synthetic_data.py` using **Faker** and **Random**.  
-- Create CSVs:
-  - `user_directory.csv`
-  - `phishing_simulation.csv`
-  - `access_logs.csv`
-  - `policy_violations.csv`  
-- Validate schema using **Pydantic** or **Pandera**.  
-- Generate 100–300 synthetic user profiles with varied behaviors.
+#### 4.2 Communication Plan
+- **Weekly progress meetings** with core developers.  
+- **Bi-weekly management briefings** with stakeholders.  
+- **Documentation updates** aligned with version-control milestones.  
 
-### 📦 Deliverables
-- `/data` directory with populated synthetic datasets  
-- Schema validation scripts and logs  
-- Data generation documentation
-
-### 🛠️ Tools
-Python, Pandas, Faker, Pandera.
-
-### ✅ Outcome
-A privacy-safe, fully synthetic dataset representing realistic enterprise activity.
+All communication is managed via Git-based issue tracking and Slack/Teams channels.
 
 ---
 
-## **Phase 4 — Analytics & Scoring Engine**
+### 5. Management Process
 
-### 🎯 Objective
-Develop the deterministic analytics engine that computes risk scores and maps threats using the OME² model.
+#### 5.1 Work Breakdown Structure (WBS)
+| ID | Phase | Deliverable |
+|----|--------|-------------|
+| 1.0 | Planning & Requirements | Project charter, requirements document |
+| 2.0 | System Design | Architecture diagrams, module interfaces |
+| 3.0 | Data Layer | Synthetic datasets and validation scripts |
+| 4.0 | Analytics Layer | HTI engine and OME² mapping modules |
+| 5.0 | LLM Layer | Policy extraction, scenarios, triage, guidance |
+| 6.0 | Visualization & Reporting | Charts and executive report |
+| 7.0 | QA & Validation | Testing framework, audit results |
+| 8.0 | Deployment | Repository packaging, documentation release |
 
-### 🧩 Key Tasks
-- Implement `feature_engineering.py` (behavioral metrics extraction).  
-- Create `score_risk.py` to compute **Human Threat Index (HTI)**:  
-  `HTI = Likelihood × Impact × (1 - Detectability)`  
-- Map risk signals to OME² pillars with `map_ome2_vectors.py`.  
-- Test and calibrate thresholds for role-based accuracy.
+#### 5.2 Schedule & Milestones
+| Milestone | Target Date | Deliverable |
+|------------|--------------|-------------|
+| M1 | Week 1 | Requirements & Scope Approval |
+| M2 | Week 2 | Architecture Finalization |
+| M3 | Week 3 | Synthetic Data Layer Complete |
+| M4 | Week 4 | Analytics Engine Operational |
+| M5 | Week 6 | LLM Modules Integrated |
+| M6 | Week 7 | Visualization & Reporting Ready |
+| M7 | Week 8 | QA, Documentation, and Final Review |
 
-### 📦 Deliverables
-- `risk_scores.csv` output  
-- Analytics engine scripts  
-- Unit tests for calculations
-
-### 🛠️ Tools
-Python, Pandas, Numpy, JSON.
-
-### ✅ Outcome
-An explainable scoring engine that quantifies human risk with precision and transparency.
-
----
-
-## **Phase 5 — LLM Intelligence Layer**
-
-### 🎯 Objective
-Integrate large language models for policy understanding, scenario generation, triage summarization, and mitigation coaching.
-
-### 🧩 Key Tasks
-1. **Policy → Control Extraction (`llm_extract_policy_rules.py`)**  
-   Converts unstructured policies into structured JSON control rules.  
-2. **Attack Scenario Generator (`llm_generate_scenarios.py`)**  
-   Creates realistic department-specific attack narratives.  
-3. **Analyst Summarizer (`llm_summarize_triage.py`)**  
-   Produces SOC-style summaries from raw activity logs.  
-4. **Mitigation Coach (`llm_generate_guidance.py`)**  
-   Generates tailored awareness messages and control recommendations.  
-
-### 📦 Deliverables
-- `policy_rules.json`  
-- `scenarios/*.json`, `triage/*.json`, `guidance/*.json`  
-- Prompt templates and validation logs
-
-### 🛠️ Tools
-Ollama (LLaMA 3 / Mistral), Python (requests/jsonschema).
-
-### ✅ Outcome
-An AI-assisted reasoning layer that transforms data into contextual and actionable intelligence.
+#### 5.3 Budget & Resource Estimates
+- **Personnel:** 4–6 core contributors  
+- **Compute:** Local GPU server (≥ 12 GB VRAM), CPU 64 GB RAM  
+- **Software:** Open-source libraries (no licensing cost)  
+- **Contingency:** 10 % buffer for LLM model tuning or data scaling  
 
 ---
 
-## **Phase 6 — Visualization & Reporting**
+### 6. Technical Process
 
-### 🎯 Objective
-Visualize insights and generate professional-grade executive reports.
+#### 6.1 Development Approach
+Agile-inspired iterative cycle (2-week sprints):
+- **Sprint 1–2:** Data & architecture validation  
+- **Sprint 3–4:** Analytics engine implementation  
+- **Sprint 5–6:** LLM module integration and refinement  
+- **Sprint 7–8:** Testing, documentation, and deployment  
 
-### 🧩 Key Tasks
-- Build `visualize.py` for:
-  - Risk heatmaps by department  
-  - Top risky identities  
-  - Phishing behavior trends  
-- Create `report_builder.py` to compile:
-  - Figures + JSON insights → PDF/Markdown  
-  - Include LLM summaries and ethics appendix  
+Version control through GitLab/GitHub with structured branching (`main`, `dev`, `feature/*`).
 
-### 📦 Deliverables
-- `charts/*.png`  
-- `human_threat_model_report.pdf`  
-- Report templates (Jinja2/ReportLab)
+#### 6.2 Methods, Tools, and Techniques
+- **Languages:** Python 3.11+  
+- **Libraries:** Pandas, Numpy, Faker, Matplotlib, Plotly, Jinja2, Pydantic, ReportLab  
+- **LLM Integration:** Ollama (LLaMA 3 / Mistral) for local inference  
+- **Testing:** PyTest, JSON Schema validation  
+- **Documentation:** Markdown, Mermaid, ReportLab PDF  
 
-### 🛠️ Tools
-Matplotlib, Plotly, ReportLab, Jinja2.
+#### 6.3 OME² Framework Implementation
+1. **Origin** – Identify the entity initiating a potential threat.  
+2. **Method** – Define the behavioral or technical vector used.  
+3. **Exposure** – Map vulnerable data assets or workflows.  
+4. **Outcome** – Quantify business or operational impact.  
 
-### ✅ Outcome
-An interpretable, visual report translating analytics into executive-ready intelligence.
-
----
-
-## **Phase 7 — Testing, Validation & Quality Assurance**
-
-### 🎯 Objective
-Verify system correctness, robustness, and ethical compliance.
-
-### 🧩 Key Tasks
-- Conduct **functional and unit testing** for each module.  
-- Validate all LLM outputs against strict JSON schemas.  
-- Measure model consistency (temperature = 0–0.2).  
-- Conduct **ethics and fairness review** using simulated edge cases.  
-
-### 📦 Deliverables
-- `/tests` folder with automated scripts  
-- QA report (accuracy, reproducibility, bias metrics)  
-- Compliance and ethics statement  
-
-### 🛠️ Tools
-PyTest, JSONSchema, Flake8, Black.
-
-### ✅ Outcome
-A stable, reproducible, bias-free system ready for deployment and presentation.
+Each event in the dataset is classified according to these four pillars to maintain interpretability and cross-framework compatibility.
 
 ---
 
-## **Phase 8 — Deployment, Documentation & Maintenance**
+### 7. Quality Assurance Plan
 
-### 🎯 Objective
-Prepare HERA for deployment, public release, and long-term sustainability.
+#### 7.1 Quality Objectives
+- JSON schema conformance ≥ 95 % for all LLM outputs.  
+- Reproducible HTI scoring with variance < 1 % across reruns.  
+- Code coverage ≥ 85 % via automated testing.  
+- Ethical compliance review for fairness and bias.
 
-### 🧩 Key Tasks
-- Finalize all documentation (`README.md`, `ARCHITECTURE.md`, `SOFTWARE_DEVELOPMENT_PLAN.md`).  
-- Create `requirements.txt` and setup guide.  
-- Package sample reports and datasets for demo.  
-- Optional: containerize project using Docker.  
-- Plan maintenance tasks (LLM retraining, dataset refresh).  
+#### 7.2 Verification & Validation
+- **Static analysis:** Linting, PEP8 conformance.  
+- **Unit testing:** Mathematical validation of HTI engine.  
+- **Functional testing:** End-to-end workflow runs.  
+- **User acceptance testing:** Review by internal security analysts.  
 
-### 📦 Deliverables
-- Complete GitHub repository  
-- Final documentation set  
-- Optional Docker container  
-- Demo-ready environment  
-
-### 🛠️ Tools
-Git, GitHub Actions, Docker (optional), Markdown.
-
-### ✅ Outcome
-A production-ready, well-documented project repository suitable for academic submission or professional demonstration.
+#### 7.3 Configuration Management
+- Version control using Git tags.  
+- Continuous integration via GitHub Actions.  
+- Automated artifact generation (reports, charts) for each build.
 
 ---
 
-## 🗓️ **Timeline Overview (8 Weeks)**
+### 8. Risk Management Plan
 
-| Phase | Duration | Deliverable |
-|-------|-----------|-------------|
-| **1. Planning** | Week 1 | Requirement & Scope Document |
-| **2. System Design** | Week 2 | Architecture Blueprint |
-| **3. Data Layer** | Week 3 | Synthetic Data Generator |
-| **4. Analytics Engine** | Week 4 | HTI & OME² Mapping Engine |
-| **5. LLM Layer** | Weeks 5–6 | AI-Driven Intelligence Modules |
-| **6. Visualization** | Week 7 | Charts & Executive Report |
-| **7. Testing/QA** | Week 7–8 | Validation Report |
-| **8. Deployment** | Week 8 | Final Repository & Documentation |
+| Risk ID | Description | Probability | Impact | Mitigation Strategy |
+|----------|--------------|-------------|---------|----------------------|
+| R1 | LLM JSON invalidity or hallucination | Medium | High | Schema validation and retry logic |
+| R2 | Synthetic data not representative | Low | Medium | Parameter tuning & validation scenarios |
+| R3 | Ethical or bias issues | Medium | High | Formal ethics review, bias detection tests |
+| R4 | Compute resource limitation | Low | Medium | Optimize batch sizes, local inference fallback |
+| R5 | Scope creep or timeline slippage | Medium | High | Change-control process and weekly reviews |
 
 ---
 
-## 🧾 **Final Deliverables Summary**
+### 9. Documentation Plan
 
-- ✅ **Executable Codebase:** `/src`, `/data`, `/outputs`, `/docs`  
-- ✅ **LLM Modules:** Policy Extraction, Scenario, Triage, Guidance  
-- ✅ **Analytics Engine:** HTI computation and OME² mapping  
-- ✅ **Report Outputs:** Charts, dashboards, and executive PDF  
-- ✅ **Documentation:** README, Architecture, SDP, Ethics report  
-- ✅ **Testing Suite:** QA and JSON schema validation
+#### 9.1 Deliverable Documents
+| Document | Description |
+|-----------|--------------|
+| `README.md` | Project overview, setup, and usage |
+| `ARCHITECTURE.md` | Detailed system and data flow diagrams |
+| `SOFTWARE_DEVELOPMENT_PLAN.md` | This plan document |
+| `RISK_MODEL_SPEC.md` | Technical details of HTI and OME² formulas |
+| `human_threat_model_report.pdf` | Executive analytics output |
+| `QA_REPORT.md` | Validation, testing, and ethics audit results |
 
----
-
-## ⚖️ **Ethics & Compliance**
-HERA is designed under a strict privacy-first principle:
-- Uses **synthetic data only** — no personal or organizational identifiers.  
-- Enforces **local/offline LLM inference** to prevent data exposure.  
-- Includes bias-checking and fairness analysis in QA phase.  
+#### 9.2 Version Control
+Each document revision is tracked in Git using semantic versioning (v1.0, v1.1, etc.), with mandatory review before merge.
 
 ---
 
-## 🚀 **Outcome**
-By the end of the development cycle, **HERA** will deliver:
-- A functional AI-assisted platform that models human-centric risks.  
-- A robust data analytics and visualization framework.  
-- Executable LLM intelligence modules for automated policy reasoning and narrative reporting.  
-- A reproducible and ethical research-grade cybersecurity tool.
+### 10. Maintenance & Future Enhancements
+
+#### 10.1 Post-Deployment Support
+- Quarterly updates for dependency maintenance and model refresh.  
+- Continuous LLM evaluation for performance and accuracy drift.  
+- Automated CI jobs for regression testing.
+
+#### 10.2 Planned Enhancements
+- Cloud-native deployment (AWS/Azure) with policy connectors.  
+- Integration with SIEM or IAM tools for real-time analysis.  
+- Multilingual policy parsing (English/French).  
+- Advanced analytics dashboard (Streamlit or Power BI).
+
+---
+
+### 🧾 Approval
+| Role | Name | Signature | Date |
+|------|------|------------|------|
+| Project Owner | — | — | — |
+| Technical Architect | — | — | — |
+| QA Lead | — | — | — |
+| Compliance Reviewer | — | — | — |
+
+---
+
+### 📍 Summary
+This Software Development Plan establishes the formal framework governing the creation and lifecycle management of **HERA**, ensuring alignment with corporate engineering, compliance, and quality standards.  
+It provides transparency, governance, and technical depth required for enterprise-grade cybersecurity software delivery.
 
 ---
