@@ -20,22 +20,22 @@ The system will be developed as an **enterprise grade research prototype** suita
 ---
 
 
-### 3. Project Overview
+### 2. Project Overview
 
-#### 3.1 Objectives
+#### 2.1 Objectives
 - Quantify and model human-centric threats within organizational contexts.  
 - Automate policy extraction, threat scenario simulation, and mitigation generation via LLMs.  
 - Deliver transparent, explainable analytics aligned with enterprise security frameworks.  
 - Ensure privacy, fairness, and reproducibility using synthetic data.
 
-#### 3.2 Deliverables
+#### 2.2 Deliverables
 - **Core Engine:** HTI computation and OMEO mapping.  
 - **LLM Modules:** Policy extraction, scenario generator, analyst summarizer, mitigation coach.  
 - **Visualization Suite:** Heatmaps, risk dashboards, executive reporting.  
 - **Documentation:** Technical design, architecture, and user manuals.  
 - **Compliance Package:** Ethics and privacy assurance report.
 
-#### 3.3 Constraints
+#### 2.3 Constraints
 - No use of real or sensitive enterprise data (synthetic data only).  
 - All LLM operations to run offline or within a controlled environment.  
 - Compliance with data-handling and AI ethics guidelines.
