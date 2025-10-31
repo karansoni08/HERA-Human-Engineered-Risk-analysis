@@ -94,16 +94,16 @@ It provides transparency, governance, and technical depth required for enterpris
              └──────────────┬──────────────┘
                             │
                             ▼
-             ┌─────────────────────────────┐
-             │  PHASE 5: LLM INTELLIGENCE  │
-             │  INTEGRATION                │
-             │─────────────────────────────│
+             ┌─────────────────────────────-┐
+             │  PHASE 5: LLM INTELLIGENCE   │
+             │  INTEGRATION                 │
+             │─────────────────────────────-│
              │ • Policy → Control extraction│
              │ • Scenario generation        │
              │ • Triage summarization       │
              │ • Mitigation coaching        │
              │ • Validate LLM JSON outputs  │
-             └──────────────┬──────────────┘
+             └──────────────┬──────────────-┘
                             │
                             ▼
              ┌─────────────────────────────┐
