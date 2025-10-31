@@ -4,10 +4,10 @@
 ---
 
 ## 🔍 Overview  
-Modern cybersecurity threats are increasingly **human-driven** such as phishing, impersonation, data mishandling, and insider misuse remain key attack vectors.  
-This project introduces an **LLM-powered, human-centric threat-modeling framework** that analyzes behavioral data, quantifies risk, and generates actionable insights through LLM reasoning.
+Modern cybersecurity threats are increasingly **human driven** such as phishing, impersonation, data mishandling, and insider misuse remain key attack vectors.  
+This project introduces an **LLM-powered, human centric threat modeling framework** that analyzes behavioral data, quantifies risk, and generates actionable insights through LLM reasoning.
 
-By combining deterministic analytics (for transparent scoring and detection) with **large-language-model intelligence** (for policy understanding, scenario generation, and mitigation guidance), this system transforms human behavior into measurable cybersecurity posture — without using any real personal data.
+By combining deterministic analytics (for transparent scoring and detection) with **large language model intelligence** (for policy understanding, scenario generation, and mitigation guidance), this system transforms human behavior into measurable cybersecurity posture without using any real personal data.
 
 ---
 
