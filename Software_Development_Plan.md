@@ -48,10 +48,7 @@ It provides transparency, governance, and technical depth required for enterpris
 
 ---
 
- ┌──────────────────────────────────────────────────────────────────────────────┐
- │                          HERA PROJECT LIFECYCLE                              │
- │                 (LLM-Assisted Human Threat Modeling System)                  │
- └──────────────────────────────────────────────────────────────────────────────┘
+## HERA Project Development Lifecycle
 
              ┌─────────────────────────────┐
              │  PHASE 1: PLANNING &        │
